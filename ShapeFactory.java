@@ -19,6 +19,11 @@ public class ShapeFactory {
 	
 	
     public ShapeFactory(int shape_type) {
+	    /**  
+		* Містить параметри фігур 
+		* @param shape_type-тип форми
+		
+	    */	
         switch (shape_type / 10) {
             case 1: {
                 this.shape = ShapeFactory.createStar(3, new Point(0, 0), (double)this.width / 2.0, (double)this.width / 2.0);
@@ -74,9 +79,12 @@ public class ShapeFactory {
                 throw new Error("type is nusupported");
             }
         }
-    }
-		
+    }	
+	  
     private static Shape createStar(int arms, Point center, double rOuter, double rInner) {
+	    /**  
+		* Розставляє фігури
+	    */	
         double angle = 3.141592653589793 / (double)arms;
         GeneralPath path = new GeneralPath();
         int i = 0;
